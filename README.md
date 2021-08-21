@@ -1,4 +1,4 @@
-AOW3 Name Replacer
+AOW3-Name-Replacer
 ===
 
 ![image](Image/title.png)
