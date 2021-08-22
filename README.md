@@ -15,7 +15,7 @@ AoW3-Name-Replacer is a tool to replace the name of a hero unit.
 
 2. Exit the game.
 
-3. Start Aow3-Name-Replace.exe.
+3. Start [ ``` Aow3-Name-Replace.exe ``` ].
 
 4. Enter the absolute path of profile file([*1](#usage-4-1)) as "File path".<br>
 Enter the first name of hero unit you want to change as "Current first name".<br>
