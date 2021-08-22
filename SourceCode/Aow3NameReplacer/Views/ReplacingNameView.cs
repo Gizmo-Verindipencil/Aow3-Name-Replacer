@@ -12,7 +12,7 @@ namespace Aow3NameReplacer.Views
         /// </summary>
         public override void ShowTitle()
         {
-            Console.WriteLine("# Aow3 Name Replacer");
+            Console.WriteLine("# AoW3 Name Replacer");
             Console.WriteLine();
         }
     }
