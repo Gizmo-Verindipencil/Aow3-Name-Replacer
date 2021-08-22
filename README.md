@@ -1,14 +1,14 @@
-AOW3-Name-Replacer
+AoW3-Name-Replacer
 ===
 
 ![image](Image/title.png)
 
-## 導入
-Age of Wonders IIIは、オランダのTriumph Studiosが開発したターン性ストラテジーゲームです。このゲームには指導者と呼ばれる様々なヒーローユニットが登場します。既に用意されたものの他に、自分のオリジナルヒーローを作ることができます。作ったヒーローには、名前をつけることができますが、日本語を使うことができません。
+## Introduction
+Age of Wonders III is a turn-based strategy game developed by Triumph Studios in the Netherlands. In this game, various hero units appear as faction leaders. Those hero units can be customized by you, and you can create your own original hero unit. Then you can give names to the hero units you create. However, multibyte characters cannot be used in names.
 
-## 概要
-ファイルのバイナリデータを書き換えることで、日本語の名前の指導者を作成します。
+## Summary
+AoW3-Name-Replacer is a tool to replace the name of a hero unit.
 
-## 参考
+## References
 [Steam - Age of Wonders III](https://store.steampowered.com/app/226840/Age_of_Wonders_III/)<br>
-[カスタム指導者の日本語化](https://aow3.swiki.jp/index.php?%E8%B3%BC%E5%85%A5%E5%BE%8CFAQ)
+[Japaneseize the name of hero unit](https://aow3.swiki.jp/index.php?%E8%B3%BC%E5%85%A5%E5%BE%8CFAQ)

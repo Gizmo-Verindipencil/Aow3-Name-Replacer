@@ -1,53 +1,55 @@
-AOW3 Name Replacer
+AoW3-Name-Replacer
 ===
 
-## 手順
-1. ゲームを起動して、カスタム指導者を作ります。
-![手順1](Image/01.png)
+## Usage
+1. Start the game and create a custom hero unit. (Do not remember to save it.)
+![_1](Image/01.png)
 
-2. ゲームを終了します。
+2. Exit the game.
 
-3. Aow3-Name-Replace.exeを実行します。
+3. Start Aow3-Name-Replace.exe.
 
-4. 任意のProfileファイルを対象に、[1]で作成したカスタム指導者の名前、新しい名前（<font color="Pink">※変更前の名前と同じ文字数である必要あり</font>）を指定します。  
-<font color="Pink">※Profileファイルは「C:\Users\(your name)\Documents\My Games\AoW3\Profiles」に保存されています。</font>
-![手順4](Image/02.png)
+4. Enter the absolute path of profile file([*1](#usage-4-1)) as "File path".<br>
+Enter the first name of hero unit you want to change as "Current first name".<br>
+Enter the first name([*2](#usage-4-2)) of the destination you want to change as "New first name".<br>
+Enter the lats name of hero unit you want to change as "Current second name".<br>
+Enter the lats name([*2](#usage-4-2)) of the destination you want to change as "New second name".<br>
+![_2](Image/02.png)
+<span id="usage-4-1" style="font-size:x-small;color:orange;">4-1: Profile files can be found at [ ``` C:\Users\{:UserName}\Documents\My Games\AoW3\Profiles ``` ].</span><br>
+<span id="usage-4-2" style="font-size:x-small;color:orange;">4-2: The new name must have the same number of characters as the old name.</span>
 
-5. ゲームを起動して、名前が置き換わったことを確認してください。
-![手順5](Image/03.png)
+5. Start the game, then make sure your hero unit's name has been changed.
+If there is a problem, rename and revert the backup file([*1](#usage-5-1)) that is generated in the same location as the original profile file.<br>
+![_3](Image/03.png)
+<span id="usage-5-1" style="font-size:x-small;color:orange;">5-1: File name is [ ``` {:User}.APD.backup ``` ].</span>
 
-<font color="Pink">!!! 問題が起きた場合、File Pathで指定したProfileファイルと同じ場所に「{ ユーザー }.APD.backup」という名前で、元ファイルがバックアップされています。このツールで変更されたAPDファイルを削除し、バックアップファイルを元ファイルの内容にリネームしてください。</font>
 
-## 留意事項
-- 置換対象の名前と新しい名前は同じ文字数にする必要があります。  
-    
-    例：  
+## Note
+- This tool provides a simple binary replacing. Therefore, depending on the name it replaces, the file may be corrupted. For example, replacing any name that corresponds to the whole or part of the name of a resource in the profile file will cause this problem. So it is recommended that the name to be replaced should be something like "xxxx" or "abcdef", which does not seem to make sense.
 
-    |既存の名前|新しい名前|結果|
-    |:---|:---|:---|
-    |abcde|あいうえお|あいうえお|
-    |abcde|あいう|あいうXXX|
-    |abc|あいうえお|あいうえおXXX|
+- The name to be replaced and the new name must have the same number of characters. Othewise the new name may be garbled.
 
-    <font color="Pink">__※XXXは文字化けした表現を指します。__</font>
-    
-- 置換の処理は2番目の名前、1番目の名前の順番で行われます。  
-  その為、指定した内容によっては次のような意図しない発生が起きます。
+Example:    
 
-    例：  
-    1番目の名前：カレーライス ⇒ ハヤシライス  
-    2番目の名前：カレー ⇒ うどん  
-    
-    × このようにはならない：
+|old name|new name|result name|
+|:---|:---|:---|
+|abcde|fghij|fghij|
+|abcde|fgh|fgh XXX([*1](#note-2-1))|
+|abc|fghij|fghij XXX([*1](#note-2-1))|
+<span id="note-2-1" style="font-size:x-small;color:orange;">1: XXX means garbled text.</span>
 
-    |1番目の名前|2番目の名前| |1番目の名前|2番目の名前|
-    |:---|:---|:---:|:---|:---|
-    |カレーライス|カレー|⇒|ハヤシライス|うどん|
+- First, the second name will be replaced, and then the first name will be replaced. If the first name contains the second name, the name may not be what you think it is.
 
-    ○ 実際にはこのようになる：
-    
-    |1番目の名前|2番目の名前| |1番目の名前|2番目の名前|
-    |:---|:---|:---:|:---|:---|
-    |カレーライス|カレー|⇒|うどんライス|うどん|
+### Example:
+First name : abcdefg -> hijklmn<br>
+Second name : abc -> xyz
 
-- このツールは単純なバイナリ置換を行います。その為、最初に置き換える名前次第ではファイルが破損することがあります。例えば、指導者の髪/ポーズの設定に関する内容の全体、あるいは一部に該当する名前は、この問題を引き起こします。なので置換対象の名前は「xxxx」とか「abcdef」のような、意味のなさそうな内容にすることを推奨します。
+#### What you expect:
+|first name|second name| |first name|second name|
+|:---|:---|:---:|:---|:---|
+|abcdefg|abc|⇒|hijklmn|xyz|
+
+#### What actual name will be:
+|first name|second name| |first name|second name|
+|:---|:---|:---:|:---|:---|
+|abcdefg|abc|⇒|xyzdefg|xyz|
