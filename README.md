@@ -43,6 +43,7 @@ Example:
 |abcde|fghij|fghij|
 |abcde|fgh|fgh<span style="color:orange">XXX</span>([*1](#note-2-1))|
 |abc|fghij|fghij<span style="color:orange">XXX</span>([*1](#note-2-1))|
+
 <span id="note-2-1" style="font-size:x-small;color:orange;">1: XXX means garbled text.</span>
 
 - First, the second name will be replaced, and then the first name will be replaced. If the first name contains the second name, the name may not be what you think it is.
