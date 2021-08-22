@@ -33,7 +33,7 @@ namespace Aow3NameReplacer.Controllers
             SetProperty(ReplacingNameWarning.Property.OldSecondName);
             SetProperty(ReplacingNameWarning.Property.NewSecondName);
             this.Model.Replace();
-            this.View.Show("処理が完了しました。");
+            this.View.Show("Done.");
             this.View.Wait();
         }
 
@@ -49,19 +49,19 @@ namespace Aow3NameReplacer.Controllers
                 switch (property)
                 {
                     case ReplacingNameWarning.Property.FilePath:
-                        Model.FilePath = View.Require("ファイルパス");
+                        Model.FilePath = View.Require("File path");
                         break;
                     case ReplacingNameWarning.Property.OldFirstName:
-                        Model.OldFirstName = View.Require("古い1番目の名前");
+                        Model.OldFirstName = View.Require("Current first name");
                         break;
                     case ReplacingNameWarning.Property.NewFirstName:
-                        Model.NewFirstName = View.Require("新しい1番目の名前");
+                        Model.NewFirstName = View.Require("New first name");
                         break;
                     case ReplacingNameWarning.Property.OldSecondName:
-                        Model.OldSecondName = View.Require("古い2番目の名前");
+                        Model.OldSecondName = View.Require("Current second name");
                         break;
                     case ReplacingNameWarning.Property.NewSecondName:
-                        Model.NewSecondName = View.Require("新しい2番目の名前");
+                        Model.NewSecondName = View.Require("New second name");
                         break;
                     default:
                         return;

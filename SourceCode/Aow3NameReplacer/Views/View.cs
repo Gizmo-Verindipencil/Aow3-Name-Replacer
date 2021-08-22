@@ -29,7 +29,7 @@ namespace Aow3NameReplacer.Views
         /// <param name="value">内容。</param>
         public void Show(string name, string value)
         {
-            Console.WriteLine(name + "：");
+            Console.WriteLine(name + ":");
             Console.WriteLine(value);
             Console.WriteLine();
         }
@@ -43,7 +43,7 @@ namespace Aow3NameReplacer.Views
             var lines = message.Split(Environment.NewLine);
             for (int i = 0; i < lines.Length; i++)
             {
-                const string HEAD = "[#警告!] ";
+                const string HEAD = "[# Warning !] ";
                 var line = (i == 0 ? HEAD : new string(' ', HEAD.Length)) + lines[i];
                 Console.WriteLine(line);
             }
@@ -63,11 +63,11 @@ namespace Aow3NameReplacer.Views
             var lines = message.Split(Environment.NewLine);
             for (int i = 0; i < lines.Length; i++)
             {
-                const string HEAD = "[#確認!] ";
+                const string HEAD = "[# Confirmation !] ";
                 var line = (i == 0 ? HEAD : new string(' ', HEAD.Length)) + lines[i];
                 Console.WriteLine(line);
             }
-            Console.WriteLine("このまま続行しますか?(Y/N)");
+            Console.WriteLine("Do you continue this process? (Y/N)");
             var answer = Console.ReadLine().Trim().ToLower();
             Console.WriteLine();
             if (answer.Length > 0 && answer.Substring(0,1) == "y")

@@ -106,7 +106,7 @@ namespace Aow3NameReplacer.Models
                 {
                     TargetProperty = ReplacingNameWarning.Property.FilePath,
                     Level = ReplacingNameWarning.WarningLevel.NotAllowed,
-                    Message = "指定されたパスにファイルが存在しません。"
+                    Message = "The file does not exist."
                 });
             }
             else if(Path.GetExtension(this.FilePath).ToLower() != ".apd")
@@ -115,7 +115,7 @@ namespace Aow3NameReplacer.Models
                 {
                     TargetProperty = ReplacingNameWarning.Property.FilePath,
                     Level = ReplacingNameWarning.WarningLevel.NotAllowed,
-                    Message = "ファイルの拡張子がAPDではありません。"
+                    Message = "The file extension is not APD."
                 });
             }
             return warnings;
@@ -154,7 +154,7 @@ namespace Aow3NameReplacer.Models
                 {
                     TargetProperty = property,
                     Level = ReplacingNameWarning.WarningLevel.NotAllowed,
-                    Message = string.Format("{0}文字以内で入力してください。", maxLength)
+                    Message = string.Format("It must be a string of 19 characters or less.", maxLength)
                 });
             }
             return warnings;
@@ -175,7 +175,7 @@ namespace Aow3NameReplacer.Models
                 {
                     TargetProperty = property,
                     Level = ReplacingNameWarning.WarningLevel.NotAllowed,
-                    Message = "1文字以上で入力してください。"
+                    Message = "It must be a string of at least one character."
                 });
             }
             return warnings;
@@ -252,7 +252,7 @@ namespace Aow3NameReplacer.Models
             var count = this.FileContents.Count(value);
             if (count == 0)
             {
-                var message = string.Format("[{0}]は対象のファイル内に存在しません。", this.OldFirstName);
+                var message = string.Format("The target file does not contains [{0}].", this.OldFirstName);
                 warnings.Add(new ReplacingNameWarning()
                 {
                     TargetProperty = property,
@@ -263,8 +263,8 @@ namespace Aow3NameReplacer.Models
             else if (count > 1)
             {
                 var message = string.Format(
-                    "[{0}]は{1}箇所で発見される表現です。" +
-                    "このまま処理するとファイルが破損する恐れがあります。", this.OldFirstName, count);
+                    "[{0}] is an expression found at {1} location(s) in the target file. " +
+                    "Continuing the process may result in file corruption. ", this.OldFirstName, count);
                 warnings.Add(new ReplacingNameWarning()
                 {
                     TargetProperty = property,
@@ -299,9 +299,9 @@ namespace Aow3NameReplacer.Models
             var countFileIncludingFirst = this.FileContents.Count(this.OldFirstName);
             if (countFirstIncludingSecond > 1 && countFileIncludingFirst > 0)
             {
-                var message = 
-                    "古い1番目の名前は2番目の名前を含んでいます。" +
-                    "意図しない名称の置換が行われる可能性があります。";
+                var message =
+                    "The current first name contains the second one. " +
+                    "The result of the name change may be unintended. ";
                 warnings.Add(new ReplacingNameWarning()
                 {
                     TargetProperty = property,
@@ -344,8 +344,8 @@ namespace Aow3NameReplacer.Models
                 if (value1.Length != value2.Length)
                 {
                     var message =
-                            "置換前後の名前の文字数が異なります。" +
-                            "名前が正しく表示されないことがあります。";
+                            "The number of characters in the name before and after changing is different. " +
+                            "The changed name may be garbled. ";
                     warnings.Add(new ReplacingNameWarning()
                     {
                         TargetProperty = property,
