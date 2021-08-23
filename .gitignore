@@ -2,6 +2,4 @@
 /SourceCode/Aow3NameReplacer/bin/
 /SourceCode/Aow3NameReplacer/obj/
 /SourceCode/Aow3NameReplacer/Aow3NameReplacer.csproj.user
-/SourceCode/Aow3NameReplacer/Properties/PublishProfiles/Test.pubxml.user
-/SourceCode/Aow3NameReplacer/Properties/PublishProfiles/Win-x64.pubxml.user
-/SourceCode/Aow3NameReplacer/Properties/PublishProfiles/Win-x86.pubxml.user
+/SourceCode/Aow3NameReplacer/Properties/PublishProfiles/*
