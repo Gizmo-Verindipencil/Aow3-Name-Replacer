@@ -11,7 +11,11 @@
     <SignAssembly>false</SignAssembly>
     <RootNamespace>Aow3NameReplacer</RootNamespace>
     <AssemblyName>Aow3NameReplacer</AssemblyName>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
 
 </Project>
