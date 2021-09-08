@@ -15,7 +15,7 @@ AoW3-Name-Replacer is a tool to replace the name of AoW3 hero units. This enable
 
 2. Exit the game.
 
-3. Start [ ``` Aow3-Name-Replace.exe ``` ].
+3. Start [ `Aow3-Name-Replace.exe` ].
 
 4. Enter the absolute path of profile file([*1](#usage-4-1)) as __File path__,<br>
 the first name of hero unit you want to change as __Current first name__,<br>
@@ -23,13 +23,13 @@ the first name([*2](#usage-4-2)) of the destination you want to change as __New 
 the lats name of hero unit you want to change as __Current second name__,<br>
 the lats name([*2](#usage-4-2)) of the destination you want to change as __New second name__.<br>
 ![_2](Image/02.png)
-<span id="usage-4-1" style="font-size:x-small;color:orange;">4-1: Profile files can be found at [ ``` C:\Users\{:UserName}\Documents\My Games\AoW3\Profiles ``` ].</span><br>
+<span id="usage-4-1" style="font-size:x-small;color:orange;">4-1: Profile files can be found at [ `C:\Users\{:UserName}\Documents\My Games\AoW3\Profiles` ].</span><br>
 <span id="usage-4-2" style="font-size:x-small;color:orange;">4-2: The new name must have the same number of characters as the old name.</span>
 
 5. Start the game, then make sure your hero unit's name has been changed.
 If there is a problem, rename and revert the backup file([*1](#usage-5-1)) that is generated in the same location as the original profile file.<br>
 ![_3](Image/03.png)
-<span id="usage-5-1" style="font-size:x-small;color:orange;">5-1: File name is [ ``` {:User}.APD.backup ``` ].</span>
+<span id="usage-5-1" style="font-size:x-small;color:orange;">5-1: File name is [ `{:User}.APD.backup` ].</span>
 
 ## Notes
 - This tool provides a simple binary replacing. Therefore, depending on the name it replaces, the file may be corrupted. For example, replacing any name that corresponds to the whole or part of the name of a resource in the profile file will cause this problem. So it is recommended that the name to be replaced should be something like "xxxx" or "abcdef", which does not seem to make sense.
